@@ -21,7 +21,7 @@ class UiBotAPI:
         self.token_timeout = None  # 令牌过期时间
 
         # 初始化
-        self.set_auth('https://commander.uibot.com.cn///','7f0aef423e364563bc2969e5053f7902', 'c9e60b6fb89f4d998a26801c76015167')
+        self.set_auth('https://commander.uibot.com.cn///','ffdc71480dc34898b8c679eddc3b7178', '2d64a893c6c5404e834c26f6e711f923')
         self.set_log_config()
     
     def set_auth(self,url: str, id: str, secret: str):
@@ -394,20 +394,20 @@ if __name__ == "__main__":
     x = UiBotAPI()
     # print(x.create_task(276, 774, 2, 1)) 
     # print(x.get_task_status(2021031000000310))
-    # print(x.get_department_id(1))
+    # print(x.get_department_id(0))
     # print(x.get_token())
     # print(x.create_department(1, "测试用"))
     # print(x.update_department(220, "测试测试测试"))
-    # print(x.get_department_user(1))
-    # print(x.get_department_flow(20))
-    # print(x.get_department_worker(20))
+    # print(x.get_department_user(879))
+    # print(x.get_department_flow(879))
+    # print(x.get_department_worker(879))
     # print(x.create_worker([1],"测测测",2,1))
     # print(x.update_worker(438,[1],"测测",2))
     # print(x.get_argument("培训演示"))
     # print(x.set_argument("培训演示", 10, " s"))
-    # print(x.create_queue("测测测"))
-    # print(x.push_queue("测测测","sss"))
+    # print(x.create_queue("this_queue_for_123"))
+    print(x.push_queue("this_queue_for_123","来也科技"))
     # print(x.pull_queue("测测测"))
     # print(x.create_task(276, 774, 2, 1))
-    print(x.get_task_status(2021031000000310))
+    # print(x.get_task_status(2021031000000310))
     # print(x.stop_task(2020101000000127))

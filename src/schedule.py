@@ -34,15 +34,28 @@ def scheduler(data):
     '''
     调用 uibot worker
 
+    wkid=001$queue=aaa$data={"name":"aaa"}
     '''
     
-    # 解析data
+    # 解析data 
+    dic ={}  # 用来存储参数
     params = data.split('$')
-    workerNo = params[0]
-    args = params[1]
+    for ele in params:
+        tmp = ele.split('=')
+        if len(tmp)==2:
+            dic[tmp[0]] = tmp[1]
+
+    workerNo = dic.get('wkid','')
+    queue = dic.get('queue','')
+    args = dic.get('data','')
 
     if workerNo == '001':
-        worker_001(args)
+        
+        if queue == '':
+            pass
+        else
+            worker_001(args)
+
         logging.info(f'call {workerNo}')
 
     elif workerNo == '002':
@@ -54,7 +67,8 @@ def scheduler(data):
 
 # 测试
 if __name__ == "__main__":
-    scheduler('001${"name":"aaa"}')
+    scheduler('wkid=001$queue=aaa$data={"name":"aaa"}')
+
 
 
 
